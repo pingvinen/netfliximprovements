@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Netflix Improvements",
+  "description": "Improvements to the Netflix UI",
+  "version": "1.0",
+
+  "page_action": {
+      "default_title": "Netflix Improvements"
+  },
+  
+  "background": {
+      "scripts": ["background.js"]
+    , "persistent": false
+  }
+  
+  , "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/browse"]
+      , "js": ["jquery-3.1.0.min.js", "browse-improvements.js"]
+    }
+  ]
+  
+  , "permissions": [
+    "declarativeContent"
+  ]
+}
